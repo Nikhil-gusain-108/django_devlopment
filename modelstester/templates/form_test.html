@@ -1,0 +1,16 @@
+{% extends "raw.html" %}
+
+{% comment %} page title {% endcomment %}
+{% block title %} FORMS {% endblock %}
+
+{% comment %} page body content {% endcomment %}
+{% block content %}
+<form method= 'post'>
+    {% csrf_token %}
+    {{form}}
+    <button type = 'submit'> submit</button>
+</form>
+{% for item in teacher %}
+Teacher name = {{item.name}} <br>
+{% endfor %}
+{% endblock %}
